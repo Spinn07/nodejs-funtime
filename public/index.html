@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="fullStack">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Node Review</title>
+</head>
+<body ng-controller="mainCtrl">
+<h1>Welcome to Node Review</h1>
+
+<form action="" ng-submit="createTask(task)">
+
+	<input type="text" ng-model="task">
+
+</form>
+
+<section class="task-list">
+	<div ng-repeat="t in tasks">
+		{{t.message}} <span ng-click="deleteTask(t)" style="color: red; font-size: 20px;cursor: pointer;">X</span>
+		<form action="" ng-submit="updateTask(t, updateText)">
+			<input type="text" ng-model="updateText">
+		</form>
+	</div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/controller/mainCtrl.js"></script>
+</body>
+</html>
